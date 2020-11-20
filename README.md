@@ -5,7 +5,7 @@
 
 `heroko` 를 이용하여 빌드까지 ! ☺️☺️
 
-## Reference 
+## Reference
 
 - Boiler Plate 만들기 Youtube 영상 : [En](https://www.youtube.com/watch?v=yScMn7iBa1g&list=PL9a7QRYt5fqly7BrCxOS71BqLLb9OeXKd) , [Ko](https://www.youtube.com/watch?v=fgoMqmNKE18&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T)
 
@@ -15,3 +15,4 @@
 
 - [Github에 ssh 공개 키 등록](https://brunch.co.kr/@anonymdevoo/10)
 
+- [mysql과 postman 연동](https://medium.com/@Raghwendra.sonu/in-this-story-i-am-going-to-talk-about-how-you-can-connect-to-mysql-database-through-postman-and-8987b1aacca0)
