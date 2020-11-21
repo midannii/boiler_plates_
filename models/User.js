@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
     token : {
         type: String,
     },
-    // token 유효기간 
+    // token 유효기간
     tokenExp :{
         type: Number
     }
@@ -56,6 +56,7 @@ userSchema.pre('save', function( next ) {
     }
 });
 
+// compare password for login
 userSchema.methods.comparePassword = function(plainPassword,cb){
     bcrypt.compare(plainPassword, this.password, function(err, isMatch){
         if (err) return cb(err);
@@ -63,6 +64,7 @@ userSchema.methods.comparePassword = function(plainPassword,cb){
     })
 }
 
+// make token
 userSchema.methods.generateToken = function(cb) {
     var user = this;
     console.log('user',user);
@@ -79,6 +81,7 @@ userSchema.methods.generateToken = function(cb) {
     })
 }
 
+// token을 이용해 find 
 
 userSchema.statics.findByToken = function (token, cb) {
     var user = this;

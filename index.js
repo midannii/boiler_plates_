@@ -12,7 +12,7 @@ const config = require("./config/key");
 // https://www.youtube.com/watch?v=TTmfGULw0Uw&list=PL9a7QRYt5fqly7BrCxOS71BqLLb9OeXKd&index=2
 mongoose.connect('mongodb://localhost/my_database', {
   useNewUrlParser: true}).then(() => console.log('DB connected'))
-                          .catch(err => console.error(err));
+                        .catch(err => console.error(err));
 
 
   //to not get any deprecation warning or error
@@ -40,7 +40,7 @@ app.get("/api/users/auth", auth, (req, res) =>{
 })
 
 
-// 회원가입을 위해 register router 만들기 
+// 회원가입을 위해 register router 만들기
 // add info with postman: https://www.youtube.com/watch?v=FW7MfF4RDjg&list=PL9a7QRYt5fqly7BrCxOS71BqLLb9OeXKd&index=6
 app.post('/api/users/register', (req,res)=> {
   const user = new User(req.body)
