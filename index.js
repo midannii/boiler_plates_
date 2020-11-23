@@ -1,19 +1,25 @@
 const express = require('express');
-const app = express();
 const mongoose = require('mongoose');
 
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); // request body parsing 미들웨어
 const cookieParser = require("cookie-parser");
-const {auth} = require('./middleware/auth.js');
+// const {auth} = require('./middleware/auth.js');
 
 const config = require("./config/key");
 
+// connect with mysql
+const mysql = require('mysql');
+const dbconfig = require('./config/DB.js');
+const conn = mysql.createConnection(dbconfig);
+
+const app = express();
+/*
 // connect with mongoDB
 // https://www.youtube.com/watch?v=TTmfGULw0Uw&list=PL9a7QRYt5fqly7BrCxOS71BqLLb9OeXKd&index=2
 mongoose.connect('mongodb://localhost/my_database', {
   useNewUrlParser: true}).then(() => console.log('DB connected'))
                         .catch(err => console.error(err));
-
+*/
 
   //to not get any deprecation warning or error
   //support parsing of application/x-www-form-urlencoded post data
@@ -23,10 +29,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// nodemon
-app.get('/', (req,res) =>{
-  res.json({"hello~": "Hi ~~~ midannii!"})
-})
 
 app.get("/api/users/auth", auth, (req, res) =>{
   res.status(200).json({
@@ -34,8 +36,12 @@ app.get("/api/users/auth", auth, (req, res) =>{
     isAuth: true,
     email: req.user.email,
     name: req.user.name,
+    nickname: req.user.nickname,
+    pw: req.user.pw,
     lastname: req.user.lastname,
-    role: req.user.role
+    birth: req.user.birth
+    // role: req.user.role
+    //user_id, nickname, email, name, pw (,lastname, birth )
   })
 })
 

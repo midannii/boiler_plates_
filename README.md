@@ -7,7 +7,7 @@
 
 
 
-## workflow (focus to DB)
+## workflow (with mongoDB)
 
 - User.js
 
@@ -32,6 +32,32 @@
     - `로그아웃`: findOneAndUpdate()
 
 
+## workflow (with mysql)
+
+mongoose를 이용해 새로운 객체를 만듦으로서 DB 연결과 회원가입, 로그인, 로그아웃 기능을 함수로 수행하던 `nosql`과 달리,
+
+`sql` 방식은 만들어진 user table에 row를 추가하는 방식으로 회원가입, `select`를 통해 로그인, 로그아웃을 구행한다.
+
+- index.js
+
+  -  `config/DB.js`를 이용하여 mysql DB와 연결   
+
+
+## heroku usage
+
+after install heroku CLI,
+
+```
+$ heroku
+$ heroku addons:create cleardb:ignite -a movie-minjok
+$ heroku config | grep CLEARDB_DATABASE_URL
+$ heroku config:set DATABASE_URL='mysql://adffdadf2341:adf4234@us-cdbr-east.cleardb.com/heroku_db?reconnect=true'
+```
+
+이때, `mysql://username:password@host정보/데이터베이스?...`
+
+
+
 ## Reference
 
 - Boiler Plate 만들기 Youtube 영상 : [En](https://www.youtube.com/watch?v=yScMn7iBa1g&list=PL9a7QRYt5fqly7BrCxOS71BqLLb9OeXKd) , [Ko](https://www.youtube.com/watch?v=fgoMqmNKE18&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T)
@@ -53,3 +79,9 @@
 - [node.js with mysql](https://www.npmjs.com/package/mysql)
 
 - [heroku 시작](https://victorydntmd.tistory.com/112)
+
+- [mysql로 로그인, 회원가입 구현](https://m.blog.naver.com/PostView.nhn?blogId=magnking&logNo=221148738767&proxyReferer=https:%2F%2Fwww.google.com%2F)
+
+- [node.js으로 회원가입을 구현하면서](https://so-tired.tistory.com/56)
+
+- [crypto 암호화](https://www.zerocho.com/category/NodeJS/post/593a487c2ed1da0018cff95d)

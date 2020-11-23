@@ -81,7 +81,7 @@ userSchema.methods.generateToken = function(cb) {
     })
 }
 
-// token을 이용해 find 
+// token을 이용해 find
 
 userSchema.statics.findByToken = function (token, cb) {
     var user = this;
