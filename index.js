@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const {auth} = require('/middleware/auth.js');
+const {auth} = require('./middleware/auth.js');
 
 const config = require("./config/key");
 
