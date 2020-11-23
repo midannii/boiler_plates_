@@ -3,7 +3,7 @@
 
 `node.js`, `mongoDB` 로 만들어진 boiler plate를 `mysql`로 만들기
 
-`heroko` 를 이용하여 빌드까지 ! ☺️☺️
+`heroku` 를 이용하여 빌드까지 ! ☺️☺️
 
 
 
@@ -51,3 +51,5 @@
 - [mongoose: node.js with mongoDB](https://mongoosejs.com/docs/)
 
 - [node.js with mysql](https://www.npmjs.com/package/mysql)
+
+- [heroku 시작](https://victorydntmd.tistory.com/112)
