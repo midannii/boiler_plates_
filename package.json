@@ -20,5 +20,14 @@
     "mongoose": "^5.10.13",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midannii/boiler_plates_.git"
+  },
+  "bugs": {
+    "url": "https://github.com/midannii/boiler_plates_/issues"
+  },
+  "homepage": "https://github.com/midannii/boiler_plates_#readme"
 }
