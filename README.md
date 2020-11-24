@@ -6,6 +6,13 @@
 `heroku` 를 이용하여 빌드까지 ! ☺️☺️
 
 
+### notice
+
+기존 mongoDB로 만들어져있던 [boiler_plate](https://github.com/jaewonhimnae/boilerplate-mern-stack)를 mysql로 변환하는 과정을 거칩니다.
+
+이 때 기존코드는 주석 처리하고, 바로 뒤에 새로 구현한 기능을 주석과 함께 나타내었습니다. 😇😇
+
+
 
 ## workflow (with mongoDB)
 
@@ -36,11 +43,25 @@
 
 mongoose를 이용해 새로운 객체를 만듦으로서 DB 연결과 회원가입, 로그인, 로그아웃 기능을 함수로 수행하던 `nosql`과 달리,
 
-`sql` 방식은 만들어진 user table에 row를 추가하는 방식으로 회원가입, `select`를 통해 로그인, 로그아웃을 구행한다.
+`sql` 방식은 만들어진 user table에 row를 추가하는 방식으로 회원가입을 진행하며,
+
+`passport`를 이용해 session 정보 저장 및 `select`를 통해 로그인, 로그아웃을 구현합니다.
+
+
+
+대부분의 구현은, [회원가입 코딩공부](https://m.blog.naver.com/ehddnjs403/221576835627)와 [passport + mysql](https://gaemi606.tistory.com/29)에서의 소스코드를 reuse 하였습니다 :)
+
+
 
 - index.js
 
-  -  `config/DB.js`를 이용하여 mysql DB와 연결   
+  -  `config/DB.js`를 이용하여 mysql DB와 연결
+
+  - "/api/users/auth" 를 이용하지 않고, app.get()을 middleware로 하여 회원가입 구현
+
+  - login, logout을 위해 session 정보를 별도로 mysql에 저장
+
+    -  `express-mysql-session` 모듈 이용
 
 
 ## heroku usage
@@ -85,3 +106,9 @@ $ heroku config:set DATABASE_URL='mysql://adffdadf2341:adf4234@us-cdbr-east.clea
 - [node.js으로 회원가입을 구현하면서](https://so-tired.tistory.com/56)
 
 - [crypto 암호화](https://www.zerocho.com/category/NodeJS/post/593a487c2ed1da0018cff95d)
+
+- [회원가입 코딩공부](https://m.blog.naver.com/ehddnjs403/221576835627)
+
+- [session 정보 mysql에 저장](https://morningbird.tistory.com/33)
+
+- [passport + mysql](https://gaemi606.tistory.com/29)
